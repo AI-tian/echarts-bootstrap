@@ -1,0 +1,19 @@
+
+.US{
+    position: fixed;
+    bottom:10px;
+    left: 0;
+    width: 60px !important;
+    height: 60px !important; 
+    z-index: 9999 !important;
+    color: #26b7a0;
+    text-align: center;
+    cursor: pointer;
+
+}
+.US .iconfont{
+    font-size: 40px;
+}
+.US .iconfont:hover{
+    color: #1f9784;
+}

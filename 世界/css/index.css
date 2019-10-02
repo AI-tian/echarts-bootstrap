@@ -1,0 +1,61 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: inline-block;
+    vertical-align: baseline;
+}
+div{
+    width: 100% !important;
+    height: 100% !important;
+}
+.tab {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/we1.png);
+    background-size: 100% 100%;
+    z-index: 9999;
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 0 10px 10px #f1f1f1;
+}
+.tab1 {
+    top: calc(20% - 25px);
+    left: calc(20% - 25px);
+}
+
+.tab2 {
+    top: calc(80% - 25px);
+    left: calc(20% - 25px);
+}
+
+.tab3 {
+    top: calc(20% - 25px);
+    left: calc(80% - 25px);
+}
+.tab4 {
+    top: calc(80% - 25px);
+    left: calc(80% - 25px);
+}
+.tab5 {
+    top: calc(5% - 25px);
+    left: calc(50% - 25px);
+}
+.tab6 {
+    top: calc(90% - 25px);
+    left: calc(50% - 25px);
+}
+.Tab-Word{
+    position: absolute;
+    top:30px;
+    left: calc(50% - 75px);
+    width: 150px;
+    line-height: 30px;
+    text-align: center;
+}

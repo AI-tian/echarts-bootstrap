@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>echarts</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/CE.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <!-- 引入 echarts.js -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    .disp {
+        display: block;
+    }
+
+    .diso {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="US">
+        <i class="iconfont icon-zhongyingwen"></i>
+    </div>
+    <script>
+        $(".US").click(function () {
+            $(".C_E").fadeToggle(1000);
+        })
+    </script>
+    <a href="./NorthAmerica.html" class="tab tab1">
+        <p class="Tab-Word">
+            <span class="disp">北美洲景观</span>
+            <span class="diso">North American landscape</span>
+        </p>
+    </a>
+    <a href="./Asian.html" class="tab tab2">
+        <p class="Tab-Word">
+            <span class="disp">亚洲景观 </span>
+            <span class="diso">Asian landscape</span>
+        </p>
+    </a>
+    <a href="./Europe.html" class="tab tab3">
+        <p class="Tab-Word">
+            <span class="disp"> 欧洲景观 </span>
+            <span class="diso">The European landscape</span>
+        </p>
+    </a>
+    <a href="./Africa.html" class="tab tab4">
+        <p class="Tab-Word">
+            <span class="disp">非洲景观 </span>
+            <span class="diso">The African landscape</span>
+        </p>
+    </a>
+    <a href="./South.html" class="tab tab5">
+        <p class="Tab-Word">
+            <span class="disp">南极景观</span>
+            <span class="diso">The Antarctic landscape</span>
+        </p>
+    </a>
+    <a href="./north.html" class="tab tab6">
+        <p class="Tab-Word">
+            <span class="disp">北极景观 </span>
+            <span class="diso">The arctic landscape</span>
+        </p>
+    </a>
+    <div id="container" style="height: 100%">
+    </div>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="./js/ecStat.min.js"></script>
+    <script type="text/javascript" src="./js/dataTool.min.js"></script>
+    <script type="text/javascript" src="./js/word.js"></script>
+    <script src="./js/china.js"></script>
+    <script type="text/javascript" src="./js/simplex-noise.js"></script>
+    <script src="./ejs/echjs.js"></script>
+    <script src="./js/us1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            start();
+        })
+        $(window).resize(function () {
+            start()
+        })
+        function start() {
+            // 基于准备好的dom，初始化echarts实例
+            var box = document.getElementById('container');
+            var myChart = echarts.init(box);
+            // 指定图表的配置项和数据
+            option = {
+                backgroundColor: '#000',
+                globe: {
+                    baseTexture: 'images/earth.jpg',
+                    heightTexture: 'images/bathymetry_bw_composite_4k.jpg',
+
+                    displacementScale: 0.1,
+
+                    shading: 'lambert',
+
+                    environment: 'images/starfield.jpg',
+
+                    light: {
+                        ambient: {
+                            intensity: 0.1
+                        },
+                        main: {
+                            intensity: 1.5
+                        }
+                    },
+
+                    layers: [{
+                        type: 'blend',
+                        blendTo: 'emission',
+                        texture: 'images/night.jpg'
+                    }, {
+                        type: 'overlay',
+                        texture: 'images/clouds.png',
+                        shading: 'lambert',
+                        distance: 5
+                    }]
+                },
+                series: []
+            }
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+
+    </script>
+</body>
+
+</html>
